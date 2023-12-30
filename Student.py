@@ -13,7 +13,7 @@ class Student:
     def info(self):
         info_str = '| '
         info_str += f'GPA: {self._gpa: .2f} | '
-        info_str += f'Credit Completion %: {self._completion_pct: .2f}% | '
+        info_str += f'Credit Completion %: {self._completion_pct: .1%} | '
 
         return info_str
 
