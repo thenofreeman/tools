@@ -10,6 +10,14 @@ class Student:
         self._completion_pct = self.calculate_completion_pct()
 
     @property
+    def info(self):
+        info_str = '| '
+        info_str += f'GPA: {self._gpa: .2f} | '
+        info_str += f'Credit Completion %: {self._completion_pct: .2f}% | '
+
+        return info_str
+
+    @property
     def gpa(self):
         return self._gpa
 
