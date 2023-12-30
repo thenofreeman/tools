@@ -1,9 +1,9 @@
 
 def main():
     courses = {
-        ('Calculus II', 'MATH-2414', 'C', 4, 'Summer 2023'),
-        ('American Sign Language', 'SGNL-1401', 'B', 4, 'Summer 2023'),
-        ('American Sign Language', 'SGNL-1401', 'W', 4, 'Summer 2023'),
+        ('Calculus II', 'MATH-2414', 'C', 4, 'Summer 2023', 'Austin Community College'),
+        ('American Sign Language', 'SGNL-1401', 'B', 4, 'Summer 2023', 'Austin Community College'),
+        ('American Sign Language', 'SGNL-1401', 'W', 4, 'Summer 2023', 'Austin Community College'),
     }
 
     s = Student(courses)
@@ -43,13 +43,13 @@ class Student:
         return (letter != 'W' and letter != 'I')
 
     def calculate_gpa(self):
-        (points, hours) = zip(*[(self._letter_values[letter]*hours, hours) for (_, _, letter, hours, _) in self._courses if self.should_use(letter)])
+        (points, hours) = zip(*[(self._letter_values[letter]*hours, hours) for (_, _, letter, hours, _, _) in self._courses if self.should_use(letter)])
 
         return sum(points)/sum(hours) if sum(hours) != 0 else 0
 
     def calculate_completion_pct(self):
-        attempted = [hours for (_, _, _, hours, _) in self._courses]
-        completed = [hours for (_, _, letter, hours, _) in self._courses if self.should_use(letter)]
+        attempted = [hours for (_, _, _, hours, _, _) in self._courses]
+        completed = [hours for (_, _, letter, hours, _, _) in self._courses if self.should_use(letter)]
 
         return sum(completed)/sum(attempted) if sum(attempted) != 0 else 0
 
