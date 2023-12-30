@@ -1,8 +1,8 @@
 class Student:
     def __init__(self, courses):
         self._letter_values = {
-            'A' : 4, 'B' : 3, 'C' : 2, 'D' : 1, 'F' : 0, 'W' : 0, 'I' : 0,
-            'a' : 4, 'b' : 3, 'c' : 2, 'd' : 1, 'f' : 0, 'w' : 0, 'i' : 0,
+            'A' : 4, 'B' : 3, 'C' : 2, 'D' : 1, 'F' : 0, 'W' : 0, 'I' : 0, 'P' : 0,
+            'a' : 4, 'b' : 3, 'c' : 2, 'd' : 1, 'f' : 0, 'w' : 0, 'i' : 0, 'p' : 0,
         }
 
         self._courses = set(courses)
